@@ -3,4 +3,4 @@ project(datastructure C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(datastructure main.c)
+add_executable(datastructure hw2.c)
