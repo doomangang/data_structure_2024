@@ -6,7 +6,7 @@
 /*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:39:31 by jihyjeon          #+#    #+#             */
-/*   Updated: 2024/04/17 14:07:44 by jihyjeon         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:15:44 by jihyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,12 +106,29 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->link;
 	}
 	return (cnt);
-}
+} // used in 10
+
+//int main(){
+//	int numList;
+//	int num;
+//	t_list *head;
+//
+//	printf("노드의 개수 : ");
+//	scanf("%d", &numList);
+//	for (int i = 1; i < numList + 1; i++) {
+//		printf("노드 #%d 데이터 : ", i);
+//		scanf("%d", &num);
+//		ft_lstadd_back(&head, ft_lstnew(num));
+//	}
+//	t_list *tmp = head;
+//	printf("연결 리스트 노드의 개수 = %d", ft_lstsize(head));
+//} // main for 10
 
 int main(){
 	int numList;
 	int num;
 	t_list *head;
+	int sum = 0;
 
 	printf("노드의 개수 : ");
 	scanf("%d", &numList);
@@ -121,6 +138,9 @@ int main(){
 		ft_lstadd_back(&head, ft_lstnew(num));
 	}
 	t_list *tmp = head;
-	printf("연결 리스트 노드의 개수 = %d", ft_lstsize(head));
-} // main for 10
-
+	for (int i = 1; i < numList + 1; i++) {
+		sum += tmp->data;
+		tmp = tmp->link;
+	}
+	printf("연결 리스트의 데이터 합: %d", sum);
+} // main for 11
