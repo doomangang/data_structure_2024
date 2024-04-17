@@ -49,12 +49,6 @@ cmake_ninja_workdir = /goinfre/jihyjeon/datastructure/cmake-build-debug/
 
 build cmake_object_order_depends_target_datastructure: phony || CMakeFiles/datastructure.dir
 
-build CMakeFiles/datastructure.dir/hw2.c.o: C_COMPILER__datastructure_Debug /goinfre/jihyjeon/datastructure/hw2.c || cmake_object_order_depends_target_datastructure
-  DEP_FILE = CMakeFiles/datastructure.dir/hw2.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -fcolor-diagnostics -std=gnu99
-  OBJECT_DIR = CMakeFiles/datastructure.dir
-  OBJECT_FILE_DIR = CMakeFiles/datastructure.dir
-
 build CMakeFiles/datastructure.dir/hw3.c.o: C_COMPILER__datastructure_Debug /goinfre/jihyjeon/datastructure/hw3.c || cmake_object_order_depends_target_datastructure
   DEP_FILE = CMakeFiles/datastructure.dir/hw3.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -fcolor-diagnostics -std=gnu99
@@ -69,7 +63,7 @@ build CMakeFiles/datastructure.dir/hw3.c.o: C_COMPILER__datastructure_Debug /goi
 #############################################
 # Link the executable datastructure
 
-build datastructure: C_EXECUTABLE_LINKER__datastructure_Debug CMakeFiles/datastructure.dir/hw2.c.o CMakeFiles/datastructure.dir/hw3.c.o
+build datastructure: C_EXECUTABLE_LINKER__datastructure_Debug CMakeFiles/datastructure.dir/hw3.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
   OBJECT_DIR = CMakeFiles/datastructure.dir
   POST_BUILD = :

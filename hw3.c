@@ -6,11 +6,13 @@
 /*   By: jihyjeon <jihyjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:39:31 by jihyjeon          #+#    #+#             */
-/*   Updated: 2024/04/17 13:17:05 by jihyjeon         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:07:44 by jihyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
+
 /*
  * 1.
  *  (2) 원형 연결 리스트 - 마지막 노드가 처음을 가리키므로 NULL 을 가리키는 포인터가 없다.
@@ -33,4 +35,60 @@
  * 9번부터는 코드로 작성
  */
 
-int main()
+//9
+typedef struct s_list{
+	int data;
+	struct s_list *link;
+}t_list;
+
+t_list	*ft_lstnew(int content)
+{
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new)
+	{
+		new->data = content;
+		new->link = NULL;
+	}
+	return (new);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list *tmp;
+
+	if (!(lst) || !(new))
+		return ;
+	if (!(*lst))
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = *lst;
+	while (tmp->link)
+		tmp = tmp->link;
+	tmp->link = new;
+}
+
+int main(){
+	int numList;
+	int num;
+	t_list *head;
+
+	printf("노드의 개수 : ");
+	scanf("%d", &numList);
+	for (int i = 1; i < numList + 1; i++) {
+		printf("노드 #%d 데이터 : ", i);
+		scanf("%d", &num);
+		ft_lstadd_back(&head, ft_lstnew(num));
+	}
+	t_list *tmp = head;
+	printf("생성된 연결 리스트: ");
+	for (int i = 1; i < numList + 1; i++) {
+		printf("%d", tmp->data);
+		if (i != numList)
+			printf("->");
+		tmp = tmp->link;
+	}
+}
