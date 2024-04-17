@@ -71,6 +71,43 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	tmp->link = new;
 }
 
+//int main(){
+//	int numList;
+//	int num;
+//	t_list *head;
+//
+//	printf("노드의 개수 : ");
+//	scanf("%d", &numList);
+//	for (int i = 1; i < numList + 1; i++) {
+//		printf("노드 #%d 데이터 : ", i);
+//		scanf("%d", &num);
+//		ft_lstadd_back(&head, ft_lstnew(num));
+//	}
+//	t_list *tmp = head;
+//	printf("생성된 연결 리스트: ");
+//	for (int i = 1; i < numList + 1; i++) {
+//		printf("%d", tmp->data);
+//		if (i != numList)
+//			printf("->");
+//		tmp = tmp->link;
+//	}
+//} // main for 9
+
+int	ft_lstsize(t_list *lst)
+{
+	int	cnt;
+
+	if (!lst)
+		return (0);
+	cnt = 1;
+	while (lst->link)
+	{
+		cnt++;
+		lst = lst->link;
+	}
+	return (cnt);
+}
+
 int main(){
 	int numList;
 	int num;
@@ -84,11 +121,6 @@ int main(){
 		ft_lstadd_back(&head, ft_lstnew(num));
 	}
 	t_list *tmp = head;
-	printf("생성된 연결 리스트: ");
-	for (int i = 1; i < numList + 1; i++) {
-		printf("%d", tmp->data);
-		if (i != numList)
-			printf("->");
-		tmp = tmp->link;
-	}
-}
+	printf("연결 리스트 노드의 개수 = %d", ft_lstsize(head));
+} // main for 10
+
