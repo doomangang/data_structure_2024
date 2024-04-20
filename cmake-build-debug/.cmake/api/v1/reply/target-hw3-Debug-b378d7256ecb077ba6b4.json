@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "datastructure"
+			"path" : "hw3"
 		}
 	],
 	"backtrace" : 1,
@@ -35,10 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -fcolor-diagnostics"
-				},
-				{
-					"fragment" : "-std=gnu99"
+					"fragment" : "-std=gnu99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics"
 				}
 			],
 			"language" : "C",
@@ -56,15 +53,11 @@
 			]
 		}
 	],
-	"id" : "datastructure::@6890427a1f51a3e7e1df",
+	"id" : "hw3::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
 			{
 				"fragment" : "",
 				"role" : "flags"
@@ -72,8 +65,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "datastructure",
-	"nameOnDisk" : "datastructure",
+	"name" : "hw3",
+	"nameOnDisk" : "hw3",
 	"paths" : 
 	{
 		"build" : ".",

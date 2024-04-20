@@ -66,11 +66,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	tmp = *lst;
-	while (tmp->link)
+	while (tmp && tmp->link)
 		tmp = tmp->link;
 	tmp->link = new;
 }
-
+//
 //int main(){
 //	int numList;
 //	int num;
@@ -124,11 +124,85 @@ int	ft_lstsize(t_list *lst)
 //	printf("연결 리스트 노드의 개수 = %d", ft_lstsize(head));
 //} // main for 10
 
+//int main(){
+//	int numList;
+//	int num;
+//	t_list *head;
+//	int sum = 0;
+//
+//	printf("노드의 개수 : ");
+//	scanf("%d", &numList);
+//	for (int i = 1; i < numList + 1; i++) {
+//		printf("노드 #%d 데이터 : ", i);
+//		scanf("%d", &num);
+//		ft_lstadd_back(&head, ft_lstnew(num));
+//	}
+//	t_list *tmp = head;
+//	for (int i = 1; i < numList + 1; i++) {
+//		sum += tmp->data;
+//		tmp = tmp->link;
+//	}
+//	printf("연결 리스트의 데이터 합: %d", sum);
+//} // main for 11
+
+int ft_lstapp(t_list *lst, int key){
+	int appear = 0;
+	while(lst){
+		if (lst->data == key)
+			appear++;
+		lst = lst->link;
+	}
+	return appear;
+} //used in 12
+
+//int main(){
+//	int numList;
+//	int num;
+//	t_list *head;
+//	int key;
+//
+//	printf("노드의 개수 : ");
+//	scanf("%d", &numList);
+//	for (int i = 1; i < numList + 1; i++) {
+//		printf("노드 #%d 데이터 : ", i);
+//		scanf("%d", &num);
+//		ft_lstadd_back(&head, ft_lstnew(num));
+//	}
+//	printf("탐색할 값을 입력하시오: ");
+//	scanf("%d", &key);
+//	int app = ft_lstapp(head, key);
+//	printf("%d는 연결 리스트에서 %d 번 나타납니다.", key, app);
+//} //  main for 12
+
+void ft_lstdelKey(t_list **lst, int key){
+	t_list *tmp = *lst;
+	t_list *prev = NULL;
+	if (!lst)
+		return;
+	while (tmp) {
+		if (tmp->data == key) {
+			if (prev == NULL) {
+				t_list *next = tmp->link;
+				free(tmp);
+				tmp = next;
+			} else {
+				t_list *next = tmp->link;
+				free(tmp);
+				prev->link = next;
+				tmp = next;
+			}
+		} else {
+			prev = tmp;
+			tmp = tmp->link;
+		}
+	}
+}
+
 int main(){
 	int numList;
 	int num;
 	t_list *head;
-	int sum = 0;
+	int key;
 
 	printf("노드의 개수 : ");
 	scanf("%d", &numList);
@@ -137,10 +211,15 @@ int main(){
 		scanf("%d", &num);
 		ft_lstadd_back(&head, ft_lstnew(num));
 	}
+	printf("삭제할 값을 입력하시오: ");
+	scanf("%d", &key);
+	ft_lstdelKey(&head, key);
 	t_list *tmp = head;
+	printf("생성된 연결 리스트: ");
 	for (int i = 1; i < numList + 1; i++) {
-		sum += tmp->data;
+		printf("%d", tmp->data);
+		if (i != numList)
+			printf("->");
 		tmp = tmp->link;
 	}
-	printf("연결 리스트의 데이터 합: %d", sum);
-} // main for 11
+} // main for 9

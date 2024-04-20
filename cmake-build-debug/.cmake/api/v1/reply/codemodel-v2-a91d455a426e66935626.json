@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "datastructure",
+					"name" : "hw3",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "datastructure::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-datastructure-Debug-af5cbb6703b136072f27.json",
-					"name" : "datastructure",
+					"id" : "hw3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hw3-Debug-b378d7256ecb077ba6b4.json",
+					"name" : "hw3",
 					"projectIndex" : 0
 				}
 			]
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/goinfre/jihyjeon/datastructure/cmake-build-debug",
-		"source" : "/goinfre/jihyjeon/datastructure"
+		"build" : "/Users/jie/Desktop/\ubb38\uc11c/3-1/\uc790\ub8cc\uad6c\uc87001\ubd84\ubc18/hw3/cmake-build-debug",
+		"source" : "/Users/jie/Desktop/\ubb38\uc11c/3-1/\uc790\ub8cc\uad6c\uc87001\ubd84\ubc18/hw3"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 6
 	}
 }

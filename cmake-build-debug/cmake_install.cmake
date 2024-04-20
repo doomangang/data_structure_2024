@@ -1,4 +1,4 @@
-# Install script for directory: /goinfre/jihyjeon/datastructure
+# Install script for directory: /Users/jie/Desktop/문서/3-1/자료구조01분반/hw3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/goinfre/jihyjeon/datastructure/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/jie/Desktop/문서/3-1/자료구조01분반/hw3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
