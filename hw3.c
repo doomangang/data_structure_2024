@@ -196,7 +196,7 @@ void ft_lstdelKey(t_list **lst, int key){
 			tmp = tmp->link;
 		}
 	}
-}
+}//PROBLEM UNSOLVED!!!!
 
 int main(){
 	int numList;
